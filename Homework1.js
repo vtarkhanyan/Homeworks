@@ -90,7 +90,22 @@ console.log(print("A revolution without dancing is a revolution not worth having
 
 // 5. Write a function to find longest substring in a given a string without repeating characters except space character. If there are several, return the last one.Consider that all letters are lowercase.
  
-
+function print(str){
+  let str1 = ""
+   let str2 = ""
+    for(let i = 0; i<str.length; i++){
+       if(str1.includes(str[i]) && str[i]!==str.match(/\s/).join("")){
+        if(str2.length<=str1.length){
+          str2 = str1
+          }
+        str1 = str1.slice(str1.indexOf(str[i])+1)
+        
+        }
+   str1 +=str[i]
+  }
+  return str2
+}
+  console.log(print("there are no two words in the english language more harmful than 'good job'."))
 
 // 6. Write a function to compute a new string from the given one by moving the first char to come after the next two chars, so & quot; abc & quot; yields & quot; bca & quot;.Repeat this process for each subsequent group of 3 chars.Ignore any group of fewer than 3 chars at the end.
 
