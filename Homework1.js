@@ -93,6 +93,7 @@ console.log(print("A revolution without dancing is a revolution not worth having
 function print(str){
   let str1 = ""
    let str2 = ""
+   str = str.toLowerCase()
     for(let i = 0; i<str.length; i++){
        if(str1.includes(str[i]) && str[i]!==str.match(/\s/).join("")){
         if(str2.length<=str1.length){
