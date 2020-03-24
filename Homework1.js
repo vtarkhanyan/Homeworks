@@ -94,19 +94,18 @@ function print(str){
   let str1 = ""
    let str2 = ""
    str = str.toLowerCase()
-    for(let i = 0; i<str.length; i++){
-       if(str1.includes(str[i]) && str[i]!==str.match(/\s/).join("")){
+    for(let i = 0 ; i<str.length; i++){
+       if(str1.includes(str[i]) && str[i]!==" "){
+         str1 = str1.slice(str1.indexOf(str[i])+1)
+       }
+        str1 +=str[i]
         if(str2.length<=str1.length){
           str2 = str1
           }
-        str1 = str1.slice(str1.indexOf(str[i])+1)
-        
-        }
-   str1 +=str[i]
-  }
+     }
   return str2
 }
-  console.log(print("there are no two words in the english language more harmful than 'good job'."))
+  console.log(print("asdsfgh"))
 
 // 6. Write a function to compute a new string from the given one by moving the first char to come after the next two chars, so & quot; abc & quot; yields & quot; bca & quot;.Repeat this process for each subsequent group of 3 chars.Ignore any group of fewer than 3 chars at the end.
 
