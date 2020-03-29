@@ -1,3 +1,6 @@
+/*1.Write a function which receives an array and a number as arguments and returns a
+new array from the elements of the given array which are larger than the given
+number.*/
 function print(arr, arg) {
     let result = []
     for (let i of arr) {
