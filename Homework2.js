@@ -67,16 +67,10 @@ numbers between minimum and maximum elements to make integers sequence.*/
 function print(arr) {
     let  x = Math.max(...arr)
     let  y = Math.min(...arr)
-    let result = []
-    for (let i= y; i<=x; i++) {
-       
-           result.push(i)
-           
-    }
-   
-    return result
+    let result = x-y-1
+    return result-arr.length+2
 }
-console.log(print([19, 42,11, 50 ]))
+console.log(print([1,5,3,8 ]))
 
 /* 6. Given an array consisting from the arrays of numbers (like a two-dimensional array).
 Find sum of each row and print them as an array*/
