@@ -22,15 +22,25 @@ function print(a, b) {
     let  x = Math.max(a, b)
     let  y = Math.min(a, b)
     let result = []
+    let result1 = []
     for (let i= y; i<=x; i++) {
-        if(i%2==0){
-           result.push(i)
-           }
+          if(i%2==0){
+           let a = i.toString().split("")
+            let b = 0
+           for(let  j of a){
+            b += parseInt(j)
+          }
+          if (b%2==0){
+            result1.push(a.join(""))
+            }
+          
+           result.push([a])
+          }  
     }
     if(result.length==0){
            result ="Such numbers does not exist."
            }
-    return result.join(", ")
+    return result1.join(", ")
 }
 console.log(print(19, 42))
 
