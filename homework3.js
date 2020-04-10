@@ -47,4 +47,17 @@ function print(num, num1 = 1, num2 = 1, arr = []) {
        }; 
 }
   console.log(print(10))
-
+/*4. Given an array of nested arrays. Write a recursive function that flattens it. (Hint create
+function that concats arrays).*/
+function print(arr, arr2 = []) {
+  if (arr.length === 0) {
+     return arr2
+  }
+  if (Array.isArray(arr[0])) {
+     return print(arr[0].concat(arr.slice(1)), arr2)
+  }
+   arr2.push(arr[0])
+   arr.splice(0,1)
+   return print(arr, arr2)
+}
+console.log(print(  [14,[1],[2]]))
