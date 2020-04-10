@@ -61,3 +61,25 @@ function print(arr, arr2 = []) {
    return print(arr, arr2)
 }
 console.log(print(  [14,[1],[2]]))
+/*5 Given a number. Write a function that calculates its sum of the digits and if that sum
+has more than 1 digit find the sum of digits of that number. Repeat that process if needed and
+return the result.*/
+let num  = 999999999999789
+let numLength = num.toString().length-1
+function print(n,x){
+   let z = n.toString()
+  let y = parseInt(n.toString()[x])
+    if(n>9 & x>0){
+      y = y+ print(n, x-1)
+      }
+      if(y>9 && x>z.length-2){
+      n = z.slice(x+2)+y
+      if(n<99){
+     y = print(n, x-(x-1))
+      }
+      }if(y>99 && x>z.length-2){
+        y = print(n, x-(x-2))
+        }
+        return y 
+   }
+console.log(print(num,numLength))
