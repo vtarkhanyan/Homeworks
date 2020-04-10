@@ -29,3 +29,22 @@ let arrLength = arr.length-1
          }
     }
    console.log(print(arr,arrLength))
+/*3. Write a recursive function which receives a number as arguments and returns the fibonacci sequence as array. */
+function print(num, num1 = 1, num2 = 1, arr = []) {
+          arr.push(num1)
+          if (num < 1) {
+               return []
+             } 
+          if (num < 2) {
+              return arr
+           }  
+           let x = num1
+           num1 = num2
+           num2 = num1+x
+          if(num >=2){
+                num2 =  print(num - 1, num1, num2, arr)
+               return  arr
+       }; 
+}
+  console.log(print(10))
+
