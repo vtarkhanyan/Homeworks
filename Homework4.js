@@ -56,8 +56,19 @@ function print(readersList){
     return newReadersList.sort((a,b) =>b.percent-a.percent)
   }
     console.log(print(readersList))
-
-
+/*Given an array and a number N.  Write a recursive function that rotates an array N
+places to the left. (Hint: to add element to the beginning use arr.unshift())*/
+/*solution 1 without recursive function */
+let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+function print(arr, n ){
+      if(n<0){
+         arr.push(...arr.splice(0,arr.length+n))
+     }else{
+          arr.push(...arr.splice(0,n))
+       }
+         return arr
+  }
+    console.log(print(arr,-2))
 
 
 
