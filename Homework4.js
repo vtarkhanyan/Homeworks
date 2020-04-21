@@ -2,17 +2,46 @@
 the given array. (without using arr.unshift(),assign second element to first, third element
 to second...)*/
 function print(arr,i){
-    arr[i]=arr[i+1]
+    arr[i]=arr[i+1];
     if(i>=arr.length-1){
-        arr.length = arr.length-1
+        arr.length = arr.length-1;
         return arr
       } 
     return print(arr,++i)
   }
   console.log(print([1,2,3,4,5,6],0))
+/* 2. Given an object. Invert it (keys become values and values become keys). If there is
+more than key for that given value create an array. */
+   let obj = { 
+      a: "1",
+      b: "2", 
+      c: "2",
+     h: "2", 
+     f: "1",
+     u: "1",
+     y: "6", 
+     e: "5"}
 
-
-
+function print(obj){
+     let arr = [];
+    for(let i in obj){
+        if(obj.hasOwnProperty(obj[i])){
+            if(typeof obj[obj[i]] == "string"){
+                arr = [];
+                 arr[0] = obj[obj[i]]
+            }
+        arr.push(i);
+        obj[obj[i]] = arr;
+        delete obj[i]
+      }else {
+            obj[obj[i]] = i;
+            delete obj[i]
+        } 
+    }      
+    return obj
+  }
+  
+  console.log(print(obj))
 
 
 
