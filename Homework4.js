@@ -40,8 +40,25 @@ function print(obj){
     }      
     return obj
   }
-  
-  console.log(print(obj))
+   console.log(print(obj))
+/*3. Given the list of the following readers: Output the books sorted by the percent in descending order which readStatus is true.*/
+
+let readersList = [
+{ book: "Catcher in the Rye", readStatus: true, percent: 40},
+{ book: "Animal Farm", readStatus: true, percent: 20},
+{ book: "Solaris", readStatus: false, percent: 90 },
+{ book: "The Fall", readStatus: true, percent: 50 },
+{ book: "White Nights", readStatus: false, percent: 60 } ,
+{ book: "After Dark", readStatus: true, percent: 70 }
+];
+function print(readersList){
+    let newReadersList = readersList.filter(x => x.readStatus == true);
+    return newReadersList.sort((a,b) =>b.percent-a.percent)
+  }
+    console.log(print(readersList))
+
+
+
 
 
 
