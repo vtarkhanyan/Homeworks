@@ -56,7 +56,7 @@ function print(readersList){
     return newReadersList.sort((a,b) =>b.percent-a.percent)
   }
     console.log(print(readersList))
-/*Given an array and a number N.  Write a recursive function that rotates an array N
+/*4 Given an array and a number N.  Write a recursive function that rotates an array N
 places to the left. (Hint: to add element to the beginning use arr.unshift())*/
 /*solution 1 without recursive function */
 let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
@@ -84,9 +84,10 @@ function print(arr, n ){
           }
     }
     console.log(print(arr,-2))
+/*5 Create a function that builds a tree like object given an array with object which
+contains parent and id properties.*/
 
-
-let treeNode = [
+let treeNodes = [
     {parent: null, id: 0},
     {parent: 0, id: 1},
     {parent: 0, id: 2},
@@ -97,10 +98,8 @@ let treeNode = [
  ]
  
  function print(treeNode, parent){
-   let node = {}
-   treeNode.filter(x => x.parent ==parent).forEach(x => node[x.id]=print(treeNode, x.id))
-   return node
+      let tree = {}
+      treeNodes.filter(x => x.parent ==parent).forEach(x => tree[x.id]=print(treeNodes, x.id))
+      return tree
    }
-   
-   console.log( print(treeNode, null)
-     )
+   console.log( print(treeNodes, null))
