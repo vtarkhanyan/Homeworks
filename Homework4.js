@@ -69,8 +69,21 @@ function print(arr, n ){
          return arr
   }
     console.log(print(arr,-2))
-
-
+/*solution 2 with recursive function*/
+let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+function print(arr, n ){
+        if(n==0){
+           return arr
+        }       
+        if(n<0){
+            arr.unshift(arr.pop())
+            return print(arr,++n)
+        }else{
+             arr.push(arr.shift())
+             return print(arr,--n)
+          }
+    }
+    console.log(print(arr,-2))
 
 
 let treeNode = [
