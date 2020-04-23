@@ -103,8 +103,8 @@ let treeNodes = [
       return tree
    }
    console.log( print(treeNodes, null))
-/*6 Create constructor function which instances would be objects with already
-implemented method*/
+/*6 Write a JavaScript function to get all possible subsets of given length of the given
+array.*/
 function print(arr, n, arr1, arr2, x, y){
     for(let i=y; i < arr.length; i++){
          arr1[x] = arr[i];
