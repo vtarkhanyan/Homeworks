@@ -120,12 +120,12 @@ console.log(print([1, 2, 3, 4, 5, 6], 3,[],[],0,0))
 /*7. Create constructor function which instances would be objects with already
 implemented method &quot;map&quot; (like Array.map)*/
 function print(){
-    function Mapobj(callback){
-        this.map = function(callback){
+    function Mapobj(mapFn){
+        this.map = function(mapFn){
                     let newObj = Object.create(this)
                     for(let key in this){
                             if(typeof this[key]!=='function'){
-                             newObj[key] = callback(this[key])
+                             newObj[key] = mapFn(this[key])
                         }     
                      }
                     return newObj
