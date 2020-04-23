@@ -103,80 +103,18 @@ let treeNodes = [
       return tree
    }
    console.log( print(treeNodes, null))
-
-function print(arr,n){
-  let arr1 = []
-  let arr2 = [...arr]
-  
-  function factorial(num) {
-  if (num < 0){ 
-            return -1;
-      } else if (num == 0){ 
-            return 1;
-      }  else {
-            return (num * factorial(num - 1));
-      }
-}
-
-let x = factorial(arr.length)
-let y = factorial(n)
-let z = factorial(arr.length-n)
-
-  let result = x/(y*z);
-
- 
-
-function print1(arr,n){
-  console.log("arr1 "+ arr1)
-  console.log(arr1.length)
-  if(arr1.length > result-1){
-    return arr1
-    }
-    
-   
-     let a =arr[n-1]
-  for(let i = n-1; i<arr.length; i++){
-    console.log(arr.slice(0,n))
-    arr1.push(arr.slice(0,n))
-       arr[n-1] = arr[i+1]
-    
-    }
-    arr[n-1] = a
-    arr.splice(n-2,1)
-if(arr.length==n){
-   console.log(arr.slice(0,n))
-  arr1.push(arr.slice(0,n))
-  arr2.splice(0,1)
-  console.log(arr2)
-    arr = [...arr2]
-    
-  console.log(arr)
-}
-    
-     return print1(arr,n)
-   } 
-   
-    return print1(arr,n)
-  }
-  
-  console.log(print([1,2,3,4,5,6],3))
-
-
-
-function print(arr, n, arr1 = [], arr2 = []){
-      function run(x, y){
-        for(let i=y; i < arr.length; i++){
-            arr1[x] = arr[i];
-            if(x < n - 1){
-                run(x++, i++);
-            } else {
-                arr2.push([...arr1]);
+/*6 Create constructor function which instances would be objects with already
+implemented method*/
+function print(arr, n, arr1, arr2, x, y){
+    for(let i=y; i < arr.length; i++){
+         arr1[x] = arr[i];
+         if(x < n - 1){
+             print(arr, n, arr1, arr2, x++, i++);
+         } else {
+             arr2.push([...arr1]);
             }
-        }
-    }
-  
-    run(0, 0);
+      }
     return arr2
 }
-console.log(print([1, 2, 3, 4,5,6,7], 4))
+console.log(print([1, 2, 3, 4, 5, 6], 3,[],[],0,0))
 
