@@ -117,4 +117,34 @@ function print(arr, n, arr1, arr2, x, y){
     return arr2
 }
 console.log(print([1, 2, 3, 4, 5, 6], 3,[],[],0,0))
+/*7. Create constructor function which instances would be objects with already
+implemented method &quot;map&quot; (like Array.map)*/
+function print(){
+    function Mapobj(callback){
+        this.map = function(callback){
+                    let newObj = Object.create(this)
+                    for(let key in this){
+                            if(typeof this[key]!=='function'){
+                             newObj[key] = callback(this[key])
+                        }     
+                     }
+                    return newObj
+                } 
+            }
+      let obj = new Mapobj()
+      
+      obj["a"] = 1
+      obj["b"] = 2
+      obj["c"] = 3
+      
+      let obj1 = obj.map(function(x){
+        return x*2
+        })
+      console.log(obj instanceof Mapobj ) //true
+      console.log(obj1 instanceof Mapobj) //true
+      console.log(obj) // { map: [Function], a: 1, b: 2, c: 3 }
+      console.log(obj1) // { a: 2, b: 4, c: 6 }
+       return  obj1
+  }
+  console.log(print())
 
