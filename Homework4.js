@@ -160,3 +160,23 @@ if(arr.length==n){
   }
   
   console.log(print([1,2,3,4,5,6],3))
+
+
+
+function print(arr, n, arr1 = [], arr2 = []){
+      function run(x, y){
+        for(let i=y; i < arr.length; i++){
+            arr1[x] = arr[i];
+            if(x < n - 1){
+                run(x++, i++);
+            } else {
+                arr2.push([...arr1]);
+            }
+        }
+    }
+  
+    run(0, 0);
+    return arr2
+}
+console.log(print([1, 2, 3, 4,5,6,7], 4))
+
