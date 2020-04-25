@@ -112,7 +112,7 @@ function print(arr, n, arr1=[], arr2=[], x=0, y=0){
     for(let i=y; i < arr.length; i++){
          arr1[x] = arr[i];
          if(x < n - 1){
-             print(arr, n, arr1, arr2, x++, i++);
+             print(arr, n, arr1, arr2, x+1, i+1);
          } else {
              arr2.push([...arr1]);
             }
