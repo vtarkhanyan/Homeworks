@@ -105,7 +105,10 @@ let treeNodes = [
    console.log( print(treeNodes, null))
 /*6 Write a JavaScript function to get all possible subsets of given length of the given
 array.*/
-function print(arr, n, arr1, arr2, x, y){
+function print(arr, n, arr1=[], arr2=[], x=0, y=0){
+    if(n<1 || n>arr.length){
+       return arr2
+       }
     for(let i=y; i < arr.length; i++){
          arr1[x] = arr[i];
          if(x < n - 1){
@@ -116,7 +119,7 @@ function print(arr, n, arr1, arr2, x, y){
       }
     return arr2
 }
-console.log(print([1, 2, 3, 4, 5, 6], 3,[],[],0,0))
+console.log(print([1, 2, 3, 4, 5, 6], 3))
 /*7. Create constructor function which instances would be objects with already
 implemented method &quot;map&quot; (like Array.map)*/
 function print(){
