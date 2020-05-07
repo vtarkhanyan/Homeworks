@@ -18,3 +18,12 @@ function sumEven(arr){
     return sum
   }
   console.log(sumEven([4,9,16,25,36,49,64,81,100]))
+
+/* 3. Check whether string is palindrome, or not.*/
+function palindrome(str) {
+  str = str.replace(/[\W_]/g, "").toLowerCase()
+  let str1 = str.split("").reverse().join("")
+  return str===str1
+}
+  console.log(palindrome("polin- drom mor dni_loP"))
+  
