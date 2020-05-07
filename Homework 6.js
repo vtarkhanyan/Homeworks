@@ -26,4 +26,34 @@ function palindrome(str) {
   return str===str1
 }
   console.log(palindrome("polin- drom mor dni_loP"))
+/* 4. Given a word and a list of possible anagrams, select the correct sublist.*/  
+function anagram(str, arr) {
+    str= str.split("")
+            .sort(function(a,b){
+                   if(a>b){
+                        return 1
+                    }else{
+                        return -1
+                    }
+              })
+            .join("")
+       
+    let possibleanagrams = []  
+    arr.map(x=>x.split("")
+       .sort(function(a,b){
+               if(a>b){
+                    return 1
+               }else{
+                    return -1
+               }
+          })
+       .join(""))
+       .forEach(function(x, ind){
+                  if(x==str){
+                       possibleanagrams.push(arr[ind])
+                  }
+          })
+    return possibleanagrams
+}
+  console.log(anagram("pencil", ["licnep", "circular", "pupil", "nilcpe", "leppnec"]))
   
